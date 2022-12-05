@@ -45,8 +45,7 @@ public class StateStorageTest {
         TestStorage storage = new TestStorage();
 
         storage.save(oldState);
-
-        System.out.println(storage.baos.toString());
+        storage.baos.toString();
 
         State newState = new State();
         storage.load(newState);

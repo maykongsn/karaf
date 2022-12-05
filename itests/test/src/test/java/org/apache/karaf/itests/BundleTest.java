@@ -46,14 +46,12 @@ public class BundleTest extends BaseTest {
     @Test
     public void listCommand() throws Exception {
         String listOutput = executeCommand("bundle:list -t 0", ADMIN_ROLES);
-        System.out.println(listOutput);
         assertFalse(listOutput.isEmpty());
     }
 
     @Test
     public void laAlias() throws Exception {
         String laOutput = executeAlias("la", ADMIN_ROLES);
-        System.out.println(laOutput);
         assertFalse(laOutput.isEmpty());
     }
 
@@ -68,10 +66,8 @@ public class BundleTest extends BaseTest {
     @Test
     public void capabilitiesCommand() throws Exception {
         String allCapabilitiesOutput = executeCommand("bundle:capabilities", ADMIN_ROLES);
-        System.out.println(allCapabilitiesOutput);
         assertFalse(allCapabilitiesOutput.isEmpty());
         String jmxWhiteboardBundleCapabilitiesOutput = executeCommand("bundle:capabilities org.apache.aries.jmx.whiteboard", ADMIN_ROLES);
-        System.out.println(jmxWhiteboardBundleCapabilitiesOutput);
         assertContains("osgi.wiring.bundle; org.apache.aries.jmx.whiteboard 1.2.0 [UNUSED]", jmxWhiteboardBundleCapabilitiesOutput);
     }
 
